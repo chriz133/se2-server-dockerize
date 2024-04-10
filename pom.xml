@@ -22,31 +22,6 @@
         </sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
-    <profile>
-        <id>deploy-docker</id>
-        <properties>
-            <maven.deploy.skip>true</maven.deploy.skip>
-        </properties>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <version>2.2.0</version>
-                    <configuration>
-                        <to>
-                            <image>${chriz133}/se2-ci-cd-process</image>
-                            <tags>
-                                <tag>${project.version}</tag>
-                                <tag>latest</tag>
-                            </tags>
-                        </to>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,11 +63,6 @@
             <version>2.10.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.cloud.tools</groupId>
-            <artifactId>jib-maven-plugin</artifactId>
-            <version>3.4.2</version>
-        </dependency>
 
     </dependencies>
 
